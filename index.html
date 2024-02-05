@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet" />
+    <style>
+        .btn2 {
+            font-size: 1.5vw;
+            background-color: #1c94ff;
+            width: 60%;
+            color: white;
+            position: relative;
+            font-weight: bold;
+            left: 3.9rem;
+            bottom: 4.0rem;
+            padding: 4px;
+            border-radius: 25px;
+        }
+        .loader{
+            /* position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%); */
+            height: 200px;
+            width: 200px;
+            border-radius: 50%;
+            border: 20px solid #ddf;
+            border-top: 20px solid #333;
+            display: none;
+            animation: rotate 2s infinite;
+        }
+        @keyframes rotate {
+            100%{
+                rotate: 360deg;
+            }
+        }
+        .recipe-details::-webkit-scrollbar{
+            width: 10px;
+        }
+        .recipe-details::-webkit-scrollbar-thumb{
+            background-color: #b5b5ba;
+            border-radius: 16px;
+            -webkit-border-radius:16px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="flex bg-blue-400 p-6 items-center justify-between ">
+        <h1 class="text-4xl font-bold">Recipe App</h1>
+        <form>
+            <input type="text" placeholder="Search Recipe" class="serach px-4 py-2 mr-3">
+            <button class="btn bg-green-400 hover:bg-green-300 transition-all font-bold p-3 rounded-lg" type="button">Search</button>
+        </form>
+    </nav>
+    <main >
+        <section>
+            <h2 class="text-center text-4xl font-bold mt-32  tag">No Recipes Available</h2>
+            <div class="loader-con absolute left-[50%] top-[50%] -translate-x-[50%]">
+                <div class="loader "></div>
+            </div>
+            <div class="recipe-container grid grid-cols-3 shrink-0">
+            </div>
+            <div class="recipe-details transition-all overflow-y-scroll fixed top-[50%] left-[50%] -translate-x-[50%] rounded-lg -translate-y-[50%] bg-gray-200 w-[40%] h-[60%] p-5 hidden">
+                <button type="button" class="closeBtn p-2 font-bold bg-red-700 text-white"><i class="text-3xl ri-close-line"></i></button>
+                <div class="content"></div>
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>
